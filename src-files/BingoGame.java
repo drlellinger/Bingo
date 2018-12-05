@@ -48,7 +48,7 @@ public class BingoGame extends JFrame
      * Constructs the game window
      */
     public BingoGame() {
-        super("Bingo Game by Daniel Mai and Baotuan Nguyen - March 5, 2012");
+        super("Bingo Game by Klaus Reuter and Martin Luck in the Name of all members of the Desktop Support");
         setSize(WIDTH, LENGTH);
 
         panel = new JPanel();
@@ -61,10 +61,10 @@ public class BingoGame extends JFrame
         stop = new JButton("Stop");
 
         //add JButtons to the panel
-        panel.add(start);
-        panel.add(stop);
+        //panel.add(start);
+        //panel.add(stop);
         panel.add(reset);
-        panel.add(bingo);
+        //panel.add(bingo);
         panel.add(nextNum);
 
         //creates tooltips for buttons
@@ -97,16 +97,16 @@ public class BingoGame extends JFrame
         bingoNumbers = new BingoNumbers();
 
         add(humanGrid); 
-        setVisible(true);
+        setVisible(false);
 
         add(computerGrid);
-        setVisible(true);
+        setVisible(false);
 
         add(bingoNumbers);
         setVisible(true);
 
         humanGrid.addMouseListener(mouseListener);
-        setVisible(true);
+        setVisible(false);
     }
 
     //the timer
@@ -118,7 +118,7 @@ public class BingoGame extends JFrame
                 computerGrid.highlightSquare();
                 if (computerGrid.checkWin()) {
                     computerGrid.setWinnerMessage("WINNER: COMPUTER");
-                    winner = true;
+                    winner = false;
                 }
                 humanGrid.setWinnerMessage("");
                 bingoNumbers.repaint();
@@ -157,7 +157,7 @@ public class BingoGame extends JFrame
                 if (!winner) {
                     if (humanGrid.checkWin()) {
                         humanGrid.setWinnerMessage("WINNER: HUMAN");
-                        winner = true;
+                        winner = false;
                     } else {
                         humanGrid.setWinnerMessage("Sorry, you haven't gotten bingo.");
                     }
@@ -170,7 +170,7 @@ public class BingoGame extends JFrame
                     humanGrid.isCalled();         
                     if (computerGrid.checkWin()) {
                         computerGrid.setWinnerMessage("WINNER: COMPUTER");
-                        winner = true;
+                        winner = false;
                     }
                 }
             } else if (source == start) { //starts the game

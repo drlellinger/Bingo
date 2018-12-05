@@ -80,7 +80,7 @@ public class BingoGrid extends JComponent
             count = 0;
             for (int col = 0; col < grid[0].length; col++) {
                 if (grid[row][col].getStatus()) {
-                    grid[row][col].setIsWinner(true);
+                    grid[row][col].setIsWinner(false);
                     count++;                
                 }
                 if (count == winningNumber) {
@@ -95,7 +95,7 @@ public class BingoGrid extends JComponent
             count = 0;
             for (int row = 0; row < grid.length; row++) {
                 if (grid[row][col].getStatus()) {
-                    grid[row][col].setIsWinner(true);
+                    grid[row][col].setIsWinner(false);
                     count++;                
                 }
                 if (count == winningNumber) {
@@ -110,7 +110,7 @@ public class BingoGrid extends JComponent
         for (int index = 0; index < grid.length; index++) {
             BingoSquare square = grid[index][index];
             if (square.getStatus()) {
-                square.setIsWinner(true);
+                square.setIsWinner(false);
                 count++;            
             }
             if (count == winningNumber) {
@@ -124,7 +124,7 @@ public class BingoGrid extends JComponent
         for (int index = grid.length - 1; index >= 0; index--) {
             BingoSquare square = grid[index][(grid.length - 1) - index];
             if (square.getStatus()) {
-                square.setIsWinner(true);
+                square.setIsWinner(false);
                 count++;
             }
             if (count == winningNumber) {
