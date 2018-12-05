@@ -88,7 +88,7 @@ public class BingoGame extends JFrame
 
         mouseListener = new MouseClickListener();
         timer = new MyTimer();
-        DELAY = 2500;
+        DELAY = 25000;
         Timer t = new Timer(DELAY, timer);
         t.start();
 
